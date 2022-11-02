@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+//import reactLogo from './assets/react.svg'
 import './App.css'
 
 function App() {
@@ -17,31 +17,24 @@ function App() {
     console.log("botao clicado");
     setCont(cont+1)
     multiplicacao();
-    setHistorico(historico + date);
     meta();
+    setHistorico(`${date} ${historico}`);
   }
 
     const multiplicacao = () => {
-      //setvalorTotal((prevState => prevState + textoDigitado))
       setValorTotal(valorTotal + parseFloat(textoDigitado) )
       console.log(mult);
-      //Setmult(textoDigitado)
     }
 
     function resetar(){
       console.log("botao clicado");
     setCont(0)
-    //Setmult(0)
     setValorTotal(0)
     setMensagem("");
     setHistorico("");
     }
    
-    // const handleText = () => {
-    //   console.log("passar o texto digitado")
-    // };
     const handleTextoDigitado = (texto) => {
-      // const handleTextoDigitado = (texto) => {
         console.log("mLs", texto.target.value)
         setTextoDigitado(texto.target.value)
     }
@@ -90,9 +83,10 @@ function App() {
       onChange={handleMetaDia}
       value={metaDia}
       />
-
-      <h3>Histórico: {historico}</h3>
-
+      <div className="historico">
+        <h3>Histórico: </h3>
+          <p>{historico}</p>
+        </div>
     </>
   ) 
 }

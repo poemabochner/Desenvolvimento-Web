@@ -1,7 +1,15 @@
-import { useParams } from "react-router-dom"
+import { useParams, useLocation } from "react-router-dom"
 
 const ContatoDetalhes = () => {
     const { id } = useParams()
+    const {state} = useLocation()
+
+    console.log(state)
+
+    //criar um objeto com id, nome, email
+    //passar via state pro contato 2
+    //puxar o id do contato que foi criado dentro do to
+    //recuperar a informação com useLocation
 
     console.log(typeof id)
     const renderizaNome = () => {

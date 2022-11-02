@@ -9,7 +9,8 @@ function App() {
   };
 
   const handleTextoDigitado = (texto) => {
-
+    console.log(texto.target.value)
+    setTextoDigitado(texto.target.value)
   }
 
   return (
